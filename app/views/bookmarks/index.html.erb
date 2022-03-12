@@ -35,7 +35,7 @@
 
 
       <button>
-        Create bookmark
+        Bookmark this movie!
       </button>
     </form>
   </div>
@@ -77,11 +77,11 @@
         </td>
 
         <td>
-          <%= a_bookmark.user_id %>
+          <%= a_bookmark.user.first_name %>
         </td>
 
         <td>
-          <%= a_bookmark.movie_id %>
+          <%#= a_bookmark.movie.title %>
         </td>
 
         <td>
@@ -95,6 +95,12 @@
           <a href="/bookmarks/<%= a_bookmark.id %>">
             Show details
           </a>
+        </td>
+        <td>
+          <a href="/delete_bookmark/<% a_bookmark.id %>">
+          Un-bookmark
+          </a>
+        </a>
         </td>
       </tr>
       <% end %>
